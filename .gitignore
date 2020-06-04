@@ -1,0 +1,7 @@
+# Build results
+target
+
+#IntelliJ IDEA configurations
+.idea
+*.iml
+
