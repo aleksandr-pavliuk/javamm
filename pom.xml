@@ -15,24 +15,9 @@
         <module>ide</module>
         <module>interpreter</module>
         <module>library</module>
-        <module>release</module>
-        <module>temp</module>
         <module>vm</module>
-        <module>code</module>
-        <module>cmd</module>
-        <module>compiler</module>
-        <module>compiler</module>
-        <module>ide</module>
-        <module>interpreter</module>
-        <module>interpreter</module>
-        <module>library</module>
-        <module>release</module>
-        <module>temp</module>
-        <module>vm</module>
-        <module>realese</module>
-        <module>temp</module>
-        <module>ide</module>
         <module>test</module>
+        <module>release</module>
     </modules>
 
     <name>Javamm project</name>
