@@ -10,6 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>cmd</artifactId>
+    <name>Javamm cmd</name>
+    <description>Console tool for javamm programming language</description>
 
     <dependencies>
         <dependency>

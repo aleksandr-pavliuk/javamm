@@ -10,6 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>code</artifactId>
+    <name>Javamm code</name>
+    <description>Code base module for javamm programming language</description>
 
 
 </project>
