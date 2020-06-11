@@ -11,6 +11,7 @@ package academy.devonline.javamm.code.fragment;
 import java.util.List;
 import java.util.Objects;
 import static java.lang.String.format;
+import static java.util.Objects.requireNonNull;
 
 /**
  * @author Alex
@@ -27,9 +28,9 @@ public class SourceLine implements Comparable<SourceLine>, CompiledCodeFragment 
     private final List<String> tokens;
 
     public SourceLine(final String moduleName, final int number, final List<String> tokens) {
-        this.moduleName = moduleName;
+        this.moduleName = requireNonNull(moduleName);
         this.number = number;
-        this.tokens = tokens;
+        this.tokens = List.copyOf(tokens);
     }
 
     public String getModuleName() {
