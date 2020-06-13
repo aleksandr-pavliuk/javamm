@@ -18,18 +18,19 @@
 
 package academy.devonline.javamm.compiler.component.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Optional;
-import java.util.Set;
 import academy.devonline.javamm.code.fragment.Operation;
 import academy.devonline.javamm.code.fragment.SourceLine;
 import academy.devonline.javamm.code.fragment.operation.Block;
 import academy.devonline.javamm.compiler.component.BlockOperationReader;
 import academy.devonline.javamm.compiler.component.OperationReader;
 import academy.devonline.javamm.compiler.component.impl.error.JavammLineSyntaxError;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Optional;
+import java.util.Set;
 
 /**
  * @author Alex

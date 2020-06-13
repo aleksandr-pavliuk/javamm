@@ -18,13 +18,14 @@
 
 package academy.devonline.javamm.compiler.component.impl.operation.simple;
 
-import java.util.ListIterator;
-import java.util.Optional;
 import academy.devonline.javamm.code.fragment.SourceLine;
 import academy.devonline.javamm.code.fragment.operation.PrintlnOperation;
 import academy.devonline.javamm.compiler.component.OperationReader;
 import academy.devonline.javamm.compiler.component.impl.error.JavammLineSyntaxError;
 import academy.devonline.javamm.compiler.component.impl.operation.AbstractOperationReader;
+
+import java.util.ListIterator;
+import java.util.Optional;
 
 /**
  * @author Alex

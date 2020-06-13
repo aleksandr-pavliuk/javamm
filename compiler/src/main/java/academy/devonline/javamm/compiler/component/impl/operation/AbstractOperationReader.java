@@ -18,11 +18,12 @@
 
 package academy.devonline.javamm.compiler.component.impl.operation;
 
-import java.util.ListIterator;
-import java.util.Optional;
 import academy.devonline.javamm.code.fragment.Operation;
 import academy.devonline.javamm.code.fragment.SourceLine;
 import academy.devonline.javamm.compiler.component.OperationReader;
+
+import java.util.ListIterator;
+import java.util.Optional;
 
 /**
  * @author Alex

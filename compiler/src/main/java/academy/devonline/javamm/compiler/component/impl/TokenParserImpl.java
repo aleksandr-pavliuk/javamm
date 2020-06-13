@@ -18,9 +18,10 @@
 
 package academy.devonline.javamm.compiler.component.impl;
 
-import java.util.List;
 import academy.devonline.javamm.compiler.component.TokenParser;
 import academy.devonline.javamm.compiler.model.TokenParserResult;
+
+import java.util.List;
 
 /**
  * @author Alex

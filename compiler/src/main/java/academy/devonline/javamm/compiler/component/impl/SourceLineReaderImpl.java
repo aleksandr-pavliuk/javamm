@@ -18,15 +18,15 @@
 
 package academy.devonline.javamm.compiler.component.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 import academy.devonline.javamm.code.fragment.SourceCode;
 import academy.devonline.javamm.code.fragment.SourceLine;
 import academy.devonline.javamm.compiler.component.SourceLineReader;
 import academy.devonline.javamm.compiler.component.TokenParser;
 import academy.devonline.javamm.compiler.model.TokenParserResult;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author Alex
@@ -36,7 +36,7 @@ public class SourceLineReaderImpl implements SourceLineReader {
 
     private final TokenParser tokenParser;
 
-    public SourceLineReaderImpl(final TokenParserImpl tokenParser) {
+    public SourceLineReaderImpl(final TokenParser tokenParser) {
         this.tokenParser = tokenParser;
     }
 
