@@ -35,7 +35,7 @@ class AbstractOperation_UnitTest {
     @Test
     void toString_should_delegate_the_call_to_the_SourceLine_toString() {
         final SourceLine sourceLine = new SourceLine("module1", 1, List.of("var", "a", "=", "2"));
-        assertEquals(sourceLine.toString(), new AbstractOperation(sourceLine){
+        assertEquals(sourceLine.toString(), new AbstractOperation(sourceLine) {
         }.toString());
     }
 
