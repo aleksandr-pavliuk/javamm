@@ -34,8 +34,8 @@ public abstract class AbstractOperationInterpreter<T extends Operation> implemen
         interpretOperation(operation);
     }
 
-    protected void checkForTerminate(){
-        if (Thread.interrupted()){
+    protected void checkForTerminate() {
+        if (Thread.interrupted()) {
             throw new TerminateInterpreterException();
         }
     }

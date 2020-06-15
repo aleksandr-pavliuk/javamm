@@ -16,31 +16,29 @@
  *
  */
 
-package academy.devonline.javamm.cmd;
+package academy.devonline.javamm.interpreter.component.impl;
 
 import academy.devonline.javamm.code.fragment.ByteCode;
-import academy.devonline.javamm.code.fragment.SourceCode;
-import academy.devonline.javamm.compiler.Compiler;
-import academy.devonline.javamm.compiler.CompilerConfigurator;
 import academy.devonline.javamm.interpreter.Interpreter;
-import academy.devonline.javamm.interpreter.InterpreterConfigurator;
+import academy.devonline.javamm.interpreter.JavammRuntimeError;
+import academy.devonline.javamm.interpreter.TerminateInterpreterException;
+import academy.devonline.javamm.interpreter.component.BlockOperationInterpreter;
 
-import java.io.IOException;
-import java.util.List;
-
+import static java.util.Objects.requireNonNull;
 /**
  * @author Alex
  * @link http://healthfood.net.ua
  */
-public final class JmmVmLauncher {
-    private JmmVmLauncher() {
+public class InterpreterImpl implements Interpreter {
+
+    private final BlockOperationInterpreter blockOperationInterpreter;
+
+    public InterpreterImpl(final BlockOperationInterpreter blockOperationInterpreter) {
+        this.blockOperationInterpreter = requireNonNull(blockOperationInterpreter);
     }
 
-    public static void main(final String[] args) throws IOException {
-        final Compiler compiler = new CompilerConfigurator().getCompiler();
-        final Interpreter interpreter = new InterpreterConfigurator().getInterpreter();
-        final ByteCode byteCode = compiler.compile(new FileSourceCode("cmd/src/main/resources/test.javamm"));
-        //System.out.println(byteCode.getCode());
-        interpreter.interpret(byteCode);
+    @Override
+    public void interpret(final ByteCode byteCode) throws JavammRuntimeError, TerminateInterpreterException {
+        blockOperationInterpreter.interpret(byteCode.getCode());
     }
 }
