@@ -1,5 +1,4 @@
 /*
- *
  *  * Copyright (c) 2019. http://devonline.academy
  *  *
  *  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +12,6 @@
  *  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  * See the License for the specific language governing permissions and
  *  * limitations under the License.
- *
  */
 
 package academy.devonline.javamm.interpreter.component.impl.operation;
@@ -42,25 +40,26 @@ import org.mockito.junit.jupiter.MockitoExtension;
  * @author Alex
  * @link http://healthfood.net.ua
  */
+@ExtendWith(MockitoExtension.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@ExtendWith(MockitoExtension.class)
 class AbstractOperationInterpreter_UnitTest {
+
     @Mock
     private Operation operation;
 
-    private AbstractOperationInterpreter operationInterpreter;
+    private AbstractOperationInterpreter<Operation> operationInterpreter;
 
     @BeforeEach
     void beforeEach() {
-        operationInterpreter = spy(new AbstractOperationInterpreter() {
+        operationInterpreter = spy(new AbstractOperationInterpreter<>() {
             @Override
             protected void interpretOperation(final Operation operation) {
 
             }
 
             @Override
-            public Class getOperationClass() {
+            public Class<Operation> getOperationClass() {
                 return null;
             }
         });
@@ -78,9 +77,8 @@ class AbstractOperationInterpreter_UnitTest {
     void Should_throw_TerminateInterpreterException_if_current_thread_is_interrupted() {
         currentThread().interrupt();
 
-        assertThrows(TerminateInterpreterException.class, ()->operationInterpreter.interpret(operation));
+        assertThrows(TerminateInterpreterException.class, () -> operationInterpreter.interpret(operation));
         assertFalse(currentThread().isInterrupted());
         verify(operationInterpreter, never()).interpretOperation(operation);
     }
-
 }
