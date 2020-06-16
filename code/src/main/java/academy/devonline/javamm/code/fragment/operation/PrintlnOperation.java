@@ -19,6 +19,7 @@
 package academy.devonline.javamm.code.fragment.operation;
 
 import static java.util.Objects.requireNonNull;
+import academy.devonline.javamm.code.fragment.Expression;
 import academy.devonline.javamm.code.fragment.Operation;
 import academy.devonline.javamm.code.fragment.SourceLine;
 
@@ -27,14 +28,14 @@ import academy.devonline.javamm.code.fragment.SourceLine;
  * @link http://healthfood.net.ua
  */
 public class PrintlnOperation extends AbstractOperation implements Operation {
-    private final String text;
+    private final Expression expression;
 
-    public PrintlnOperation(final SourceLine sourceLine, final String text) {
+    public PrintlnOperation(final SourceLine sourceLine, Expression expression) {
         super(sourceLine);
-        this.text = requireNonNull(text);
+        this.expression = requireNonNull(expression);
     }
 
-    public String getText() {
-        return text;
+    public Expression getExpression() {
+        return expression;
     }
 }

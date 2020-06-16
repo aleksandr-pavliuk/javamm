@@ -18,20 +18,27 @@
 
 package academy.devonline.javamm.compiler.component.impl.operation.simple;
 
+import java.util.ListIterator;
+import java.util.Optional;
+import academy.devonline.javamm.code.fragment.Expression;
 import academy.devonline.javamm.code.fragment.SourceLine;
 import academy.devonline.javamm.code.fragment.operation.PrintlnOperation;
+import academy.devonline.javamm.compiler.component.ExpressionResolver;
 import academy.devonline.javamm.compiler.component.OperationReader;
 import academy.devonline.javamm.compiler.component.impl.error.JavammLineSyntaxError;
 import academy.devonline.javamm.compiler.component.impl.operation.AbstractOperationReader;
-
-import java.util.ListIterator;
-import java.util.Optional;
 
 /**
  * @author Alex
  * @link http://healthfood.net.ua
  */
 public class PrintlnOperationReader extends AbstractOperationReader<PrintlnOperation> implements OperationReader {
+    private final ExpressionResolver expressionResolver;
+
+    public PrintlnOperationReader(final ExpressionResolver expressionResolver) {
+        this.expressionResolver = expressionResolver;
+    }
+
     @Override
     protected Optional<String> getOperationKeyword() {
         return Optional.of("println");
@@ -49,7 +56,8 @@ public class PrintlnOperationReader extends AbstractOperationReader<PrintlnOpera
 
     @Override
     protected PrintlnOperation get(final SourceLine sourceLine, final ListIterator<SourceLine> iterator) {
-        final String text = sourceLine.getToken(2);
-        return new PrintlnOperation(sourceLine, text);
+        Expression
+            expression = expressionResolver.resolve(sourceLine.subList(2, sourceLine.getTokenCount() - 1), sourceLine);
+        return new PrintlnOperation(sourceLine, expression);
     }
 }

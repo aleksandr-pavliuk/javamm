@@ -16,24 +16,19 @@
  *
  */
 
-package academy.devonline.javamm.interpreter.component.impl.operation.simple;
+package academy.devonline.javamm.compiler.component;
 
-import academy.devonline.javamm.code.fragment.operation.PrintlnOperation;
-import academy.devonline.javamm.interpreter.component.impl.operation.AbstractOperationInterpreter;
+import java.util.List;
+import academy.devonline.javamm.code.fragment.Expression;
+import academy.devonline.javamm.code.fragment.SourceLine;
 
 /**
  * @author Alex
  * @link http://healthfood.net.ua
  */
-public class PrintlnOperationInterpreter extends AbstractOperationInterpreter<PrintlnOperation> {
+public interface ExpressionBuilder {
 
-    @Override
-    protected void interpretOperation(final PrintlnOperation operation) {
-        System.out.println(operation.getExpression());
-    }
+    boolean canBuild(List<String> tokens);
 
-    @Override
-    public Class getOperationClass() {
-        return PrintlnOperation.class;
-    }
+    Expression build(List<String> expressionTokens, SourceLine sourceLine);
 }

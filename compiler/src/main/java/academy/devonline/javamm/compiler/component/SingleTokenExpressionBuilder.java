@@ -16,24 +16,12 @@
  *
  */
 
-package academy.devonline.javamm.interpreter.component.impl.operation.simple;
-
-import academy.devonline.javamm.code.fragment.operation.PrintlnOperation;
-import academy.devonline.javamm.interpreter.component.impl.operation.AbstractOperationInterpreter;
+package academy.devonline.javamm.compiler.component;
 
 /**
  * @author Alex
  * @link http://healthfood.net.ua
  */
-public class PrintlnOperationInterpreter extends AbstractOperationInterpreter<PrintlnOperation> {
+public interface SingleTokenExpressionBuilder extends ExpressionBuilder {
 
-    @Override
-    protected void interpretOperation(final PrintlnOperation operation) {
-        System.out.println(operation.getExpression());
-    }
-
-    @Override
-    public Class getOperationClass() {
-        return PrintlnOperation.class;
-    }
 }
